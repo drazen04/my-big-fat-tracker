@@ -1,0 +1,17 @@
+tasks:
+  - init: npm install
+    command: |
+      export HMR_PORT=`gp url 3000`
+      npm run dev
+ports:
+  - port: 3000
+    onOpen: open-browser
+vscode:
+  extensions:
+    - dbaeumer.vscode-eslint
+    - svelte.svelte-vscode
+
+github:
+  prebuilds:
+    master: true
+    branches: true
